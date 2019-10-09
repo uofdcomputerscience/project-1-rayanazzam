@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         super.viewDidLoad()
         parseFromUrl(urlString: self.urlString)
-        // Do any additional setup after loading the view.
     }
     
 }
@@ -49,29 +48,28 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let name = itemList.mercury[indexPath.item].name
-        var image = retrieveImage (urlString: itemList.mercury[indexPath.item].url)
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "MercuryCell")!
         
         if let mercuryCell = cell as? MercuryCell {
             mercuryCell.mercuryLabel.text = "\(name)"
+            postImage(mercuryCell: mercuryCell, urlString: itemList.mercury[indexPath.item].url)
         }
         return cell
     }
     
-    func retrieveImage (urlString: String) -> UIImage {
-        print(urlString)
-        var image: UIImage? = nil
+    func postImage(mercuryCell: MercuryCell, urlString: String) -> Void {
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: URL(string: urlString)!) { (data, response, error) in
-            if let data = data {
-              image = UIImage(data: data)
+                if let data = data {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        mercuryCell.mercuryImage.image = image
+                    }
+                }
             }
-        }
-        task.resume()
-        return image!
+            task.resume()
     }
-    
-    
 }
  
 
