@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let mercury: [MercuryItem]
     }
     
+    // parses data using MercuryList as model data and assigns it to a global variable, itemList
     func parseFromUrl (urlString: String) {
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: URL(string: urlString)!) { (data, response, error) in
@@ -59,6 +60,8 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    
+    // Method downloads the image and posts it on the MercuryCell
     func postImage(mercuryCell: MercuryCell, urlString: String) -> Void {
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: URL(string: urlString)!) { (data, response, error) in

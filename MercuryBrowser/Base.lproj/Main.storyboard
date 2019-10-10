@@ -27,25 +27,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="345"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-Jo-GzJ">
-                                                    <rect key="frame" x="20" y="313" width="162" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-Jo-GzJ">
+                                                    <rect key="frame" x="20" y="313" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="element" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-IL-1cj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="element" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-IL-1cj">
                                                     <rect key="frame" x="292" y="307" width="62" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YjO-tn-4dj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="305"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YjO-tn-4dj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="305"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="305" id="ovI-xc-C2v"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="YjO-tn-4dj" secondAttribute="trailing" id="2oY-d8-Qr8"/>
+                                                <constraint firstAttribute="bottom" secondItem="o3R-Jo-GzJ" secondAttribute="bottom" constant="11" id="VmK-dL-jxh"/>
+                                                <constraint firstItem="YjO-tn-4dj" firstAttribute="leading" secondItem="QzK-K3-WQd" secondAttribute="leading" id="XfH-2e-Ea6"/>
+                                                <constraint firstItem="moP-IL-1cj" firstAttribute="centerY" secondItem="o3R-Jo-GzJ" secondAttribute="centerY" id="bsc-79-6nR"/>
+                                                <constraint firstAttribute="trailing" secondItem="moP-IL-1cj" secondAttribute="trailing" constant="20" id="jwp-ec-g5U"/>
+                                                <constraint firstItem="o3R-Jo-GzJ" firstAttribute="top" secondItem="YjO-tn-4dj" secondAttribute="bottom" constant="8" id="m1w-WM-tre"/>
+                                                <constraint firstItem="YjO-tn-4dj" firstAttribute="top" secondItem="QzK-K3-WQd" secondAttribute="top" id="m9y-q7-ORA"/>
+                                                <constraint firstItem="o3R-Jo-GzJ" firstAttribute="leading" secondItem="QzK-K3-WQd" secondAttribute="leading" constant="20" id="vOz-mo-f9b"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mercuryImage" destination="YjO-tn-4dj" id="seN-5l-Plw"/>
@@ -64,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
+            <point key="canvasLocation" x="-154" y="91"/>
         </scene>
     </scenes>
 </document>
