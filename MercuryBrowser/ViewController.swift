@@ -53,7 +53,8 @@ extension ViewController: UITableViewDataSource {
         
         if let mercuryCell = cell as? MercuryCell {
             mercuryCell.mercuryLabel.text = "\(name)"
-            postImage(mercuryCell: mercuryCell, urlString: itemList.mercury[indexPath.item].url)
+            postImage(mercuryCell: mercuryCell,
+                      urlString: itemList.mercury[indexPath.item].url)
         }
         return cell
     }

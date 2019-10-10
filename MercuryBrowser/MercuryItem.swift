@@ -12,8 +12,4 @@ struct MercuryItem: Codable {
     let name: String
     let type: String
     let url: String
-    
-    var imageURL: URL {
-        return URL(string: url)!
-    }
 }
